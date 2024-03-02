@@ -1,40 +1,22 @@
 /* Mobile Styles */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif; 
+  font-size: 16px;
+  line-height: 1.5;
   margin: 0;
-  padding: 0;
-  background-color: #f1f1f1;
+  background-color: #ddd; 
 }
 
 header {
   background-color: #333;
-  color: white;
+  color: #fff;
   padding: 1rem;
 }
 
-header h1 {
-  margin: 0;
-}
-
-nav {
-  background-color: #eee;
-  padding: 0.5rem;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin-right: 1rem;
-}
+/* Styles for all screens */
 
 .hero {
-  text-align: center;
   margin-bottom: 2rem;
 }
 
@@ -42,9 +24,9 @@ nav li {
   max-width: 100%;
 }
 
-h1, h2, h3 {
+h1, h2 {
   text-align: center;
-}
+} 
 
 .specials {
   display: flex;
@@ -55,6 +37,7 @@ h1, h2, h3 {
 .special img {
   width: 100%;
   max-width: 300px;
+  margin-bottom: 1rem;
 }
 
 
@@ -65,14 +48,29 @@ h1, h2, h3 {
   .hero {
     margin-bottom: 4rem;
   }
-  
+
   .hero-img {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 28px;
   }
 
   .specials {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .special {
+    width: 30%;
   }
 
 }
