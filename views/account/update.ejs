@@ -1,0 +1,29 @@
+<form id="update-form" method="POST" action="/account/update">
+  <label>First Name</label>
+  <input name="firstName" value="<%= user.firstName %>" required />
+
+  <label>Last Name</label>
+  <input name="lastName" value="<%= user.lastName %>" required />
+
+  <label>Email</label>
+  <input name="email" type="email" value="<%= user.email %>" required />
+
+  <button type="submit">Update Account</button>
+</form>
+
+<form id="password-form" method="POST" action="/account/change-password">
+  <label>Current Password</label>
+  <input name="currentPassword" type="password" required />
+
+  <label>New Password</label>
+  <input
+    name="newPassword"
+    type="password"
+    required
+    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    title="Must contain at least one uppercase letter, one lowercase letter, one number and one special character"
+  />
+
+  <button type="submit">Change Password</button>
+</form>
+

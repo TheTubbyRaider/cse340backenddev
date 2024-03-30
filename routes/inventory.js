@@ -46,3 +46,8 @@ router.post('/add',
   inventoryController.createInventory);
 
 module.exports = router;
+
+const { requireAuth } = require('../middleware/authMiddleware');
+
+// Protect inventory routes
+router.use(requireAuth); 

@@ -48,3 +48,21 @@ const host = process.env.HOST;
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`);
 });
+
+// Logout route
+app.get("/logout", (req, res) => {
+  req.flash("success", "You have been logged out");
+  res.redirect("/login");
+});
+
+// Flash messages middleware
+app.use((req, res, next) => {
+  res.locals.messages = req.flash();
+  next();
+});
+app.use((req, res, next) => {
+  if (!req.user && protectedRoutes.includes(req.path)) {
+    return res.redirect("/login");
+  }
+  next();
+});

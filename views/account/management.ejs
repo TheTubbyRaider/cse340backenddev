@@ -1,0 +1,20 @@
+<% if(accountType === 'Client') { %>
+
+    <h1>Welcome <%= firstName %>!</h1>
+  
+  <% } else { %>
+  
+    <h1>Welcome <%= firstName %></h1>
+    
+    <% if(inventoryLink) { %>
+      <a href="/inventory/management">Inventory Management</a>
+    <% } %>
+  
+  <% } %>
+  
+  <a href="/account/update">Update Account</a>
+<% if(successMessage.length > 0) { %>
+<div class="success"><%= successMessage %></div>
+<% } %> <% if(errorMessage.length > 0) { %>
+<div class="error"><%= errorMessage %></div>
+<% } %>

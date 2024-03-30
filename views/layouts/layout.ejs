@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
-    <body>
-        <div id="wrapper">
-            <%- include('../partials/header') %>
-            <%- include('../partials/navigation') %>
-            <main>
-                <%- body %>
-            </main>
+  <%- include('../partials/head') %>
+  <body>
+    <div id="wrapper">
+      <%- include('../partials/header') %> <% if (user) { %> <%-
+      include('../partials/navigation') %> <% } else { %> <%-
+      include('../partials/guestNavigation') %> <% } %>
+      <main><%- body %></main>
 
-            <%- include('../partials/footer') %>
-        </div>
-    </body>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
 </html>
